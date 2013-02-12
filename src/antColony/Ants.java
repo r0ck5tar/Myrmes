@@ -15,15 +15,15 @@ public class Ants {
 		nbSoldiers=0;
 	}
 
-	public int getNbFourmi() {
+	public int getNbAnts() {
 		return nbAnts;
 	}
 
-	public int getNbOuvrier() {
+	public int getNbWorkers() {
 		return nbWorkers;
 	}
 
-	public void setNbOuvrier(int nbWorkers) {
+	public void setNbWorkers(int nbWorkers) {
 		this.nbWorkers = nbWorkers;
 	}
 
