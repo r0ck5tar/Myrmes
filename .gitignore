@@ -18,3 +18,7 @@
 
 # Hidden files
 .*
+.gitignore
+
+# Class files
+*.class
