@@ -5,7 +5,8 @@ public class Fourmi {
 	private int nbSoldat;
 	private int nbNourrice;
 	private final static int MAXFOURMI=8;
-	private int nbFourmi= nbOuvrier+nbSoldat+nbNourrice ;
+	private final static int MAXNOURRICE=8;
+	private int nbFourmi= nbOuvrier+nbSoldat;
 	
 	public Fourmi(){
 		nbOuvrier=2;
@@ -70,13 +71,13 @@ public class Fourmi {
 	}
 	
 	public void ajouterNourrice(){
-		if(nbFourmi+1<MAXFOURMI){
+		if(nbFourmi+1<MAXNOURRICE){
 			nbNourrice++;
 		}
 	}
 	
 	public void enleverNourrice(){
-		if(nbOuvrier-1<0){
+		if(nbNourrice-1<0){
 			System.out.println("On ne peut pas enlever de nourrice");
 		}
 		else{
