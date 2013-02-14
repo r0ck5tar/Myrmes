@@ -16,9 +16,8 @@
 *.out
 *.app
 
-# Hidden files
-.*
-.gitignore
-
 # Class files
 *.class
+
+# Eclipse
+*.classpath
