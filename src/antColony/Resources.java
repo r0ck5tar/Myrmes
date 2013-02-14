@@ -9,7 +9,7 @@ package antColony;
 
 public class Resources {
 
-	private int nbLarves;
+	private int nbLarvae;
 	private int nbFood;
 	private int nbStone;
 	private int nbTerre;
@@ -20,7 +20,7 @@ public class Resources {
 	 */
 	public Resources() {
 		// attributes
-		nbLarves = 0;
+		nbLarvae = 0;
 		nbFood = 0;
 		nbStone = 0;
 		nbTerre = 0;
@@ -29,13 +29,13 @@ public class Resources {
 	/**
 	 * Build an object Resources. The number of each attribute is given.
 	 * 
-	 * @param nbLarves
+	 * @param nbLarvae
 	 * @param nbFood
 	 * @param nbPierre
 	 * @param nbTerre
 	 */
-	public Resources(int nbLarves, int nbFood, int nbPierre, int nbTerre) {
-		this.nbLarves = nbLarves;
+	public Resources(int nbLarvae, int nbFood, int nbPierre, int nbTerre) {
+		this.nbLarvae = nbLarvae;
 		this.nbFood = nbFood;
 		this.nbStone = nbPierre;
 		this.nbTerre = nbTerre;
@@ -45,20 +45,20 @@ public class Resources {
 	/**
 	 * Return the number of larves
 	 * 
-	 * @return nbLarves
+	 * @return nbLarvae
 	 */
 
-	public int getNbLarves() {
-		return nbLarves;
+	public int getNbLarvae() {
+		return nbLarvae;
 	}
 
 	/**
 	 * Set the number of larves
 	 * 
-	 * @param nbLarves
+	 * @param nbLarvae
 	 */
-	public void setNbLarves(int nbLarves) {
-		this.nbLarves = nbLarves;
+	public void setNbLarvae(int nbLarvae) {
+		this.nbLarvae = nbLarvae;
 	}
 
 	/**
@@ -122,9 +122,9 @@ public class Resources {
 	 * Method that converts 3 larves in 1 food resource. If you don't have
 	 * enough larves, return a message error
 	 */
-	public void convertLarves() {
-		if (this.nbLarves >= 3) {
-			this.nbLarves = this.nbLarves - 3;
+	public void convertLarvae() {
+		if (this.nbLarvae >= 3) {
+			this.nbLarvae = this.nbLarvae - 3;
 			nbFood++;
 		} else {
 			System.out
@@ -135,8 +135,8 @@ public class Resources {
 	/**
 	 * A method to add larves
 	 */
-	public void addLarves(int n) {
-		nbLarves += n;
+	public void addLarvae(int n) {
+		nbLarvae += n;
 	}
 
 	/**
@@ -163,8 +163,8 @@ public class Resources {
 	/**
 	 * A method to delete larves
 	 */
-	public void removeLarves(int n){
-		nbLarves-=n;
+	public void removeLarvae(int n){
+		nbLarvae-=n;
 	}
 	/**
 	 * A method to delete food resources
