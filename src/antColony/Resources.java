@@ -159,5 +159,31 @@ public class Resources {
 	public void addTerre(int n) {
 		nbTerre += n;
 	}
-
+	
+	/**
+	 * A method to delete larves
+	 */
+	public void removeLarves(int n){
+		nbLarves-=n;
+	}
+	/**
+	 * A method to delete food resources
+	 */
+	public void removeFood(int n){
+		nbFood-=n;
+	}
+	
+	/**
+	 * A method to delete stone resources
+	 */
+	public void removeStone(int n){
+		nbStone-=n;
+	}
+    
+	/**
+	 * A method to delete terre resources
+	 */
+	public void removeTerre(int n){
+		nbTerre-=n;
+	}
 }
