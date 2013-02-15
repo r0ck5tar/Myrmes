@@ -116,7 +116,6 @@ public class Resources {
 	public void setNbTerre(int nbTerre) {
 		this.nbTerre = nbTerre;
 	}
-	
 
 	/**
 	 * Method that converts 3 larves in 1 food resource. If you don't have
@@ -159,31 +158,32 @@ public class Resources {
 	public void addTerre(int n) {
 		nbTerre += n;
 	}
-	
+
 	/**
 	 * A method to delete larves
 	 */
-	public void removeLarves(int n){
-		nbLarves-=n;
+	public void removeLarves(int n) {
+		nbLarves -= n;
 	}
+
 	/**
 	 * A method to delete food resources
 	 */
-	public void removeFood(int n){
-		nbFood-=n;
+	public void removeFood(int n) {
+		nbFood -= n;
 	}
-	
+
 	/**
 	 * A method to delete stone resources
 	 */
-	public void removeStone(int n){
-		nbStone-=n;
+	public void removeStone(int n) {
+		nbStone -= n;
 	}
-    
+
 	/**
 	 * A method to delete terre resources
 	 */
-	public void removeTerre(int n){
-		nbTerre-=n;
+	public void removeTerre(int n) {
+		nbTerre -= n;
 	}
 }
