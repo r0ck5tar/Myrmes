@@ -1,73 +1,47 @@
 package antColony;
 
-public class Births {
-	protected boolean firstBirth;
-	protected boolean secondBirth;
-	protected boolean thirdBirth;
-	protected int nbNursesRequiredFirstBirth;	// number of NNurses Required for the 1st birth
-	protected int nbNursesRequiredSecondBirth;
+abstract class Births {
+	protected BirthNumber birthNumber;
 	protected int nbNursesAvailable;
 	protected int nbNursesAlreadyUsed;
+
 	
-// Constructor
-public Births(int first, int second, AntColonyBoard ants){
-	this.firstBirth=true;
-	this.secondBirth=false;
-	this.thirdBirth=false;
-	this.nbNursesRequiredFirstBirth=first;
-	this.nbNursesRequiredSecondBirth=second;
-	this.nbNursesAlreadyUsed=0;
-	this.nbNursesAvailable=ants.getAnts().getNbNurses();
-}
+	// Constructor
+	public Births(AntColonyBoard ants){
+		this.birthNumber = BirthNumber.FIRST;
+		this.nbNursesAlreadyUsed=0;
+		this.nbNursesAvailable=ants.getAnts().getNbNurses();  //is this variable useful? C'est pas une duplication? 
+	}
+	
+	
+	// Abstract methods
+	public abstract void birth(); 
+	//toutes les classes qui héritent de cette classe implémentera cette méthode différemment
+	//(avec différents nombres de nourrices requises, et différent type de fourmis nés)
+	
+	
+	// Getters & Setters
+	
+	public BirthNumber getBirthNumber() {
+		return birthNumber;
+	}
+	
+	public void setBirthNumber(BirthNumber birthNumber) {
+		this.birthNumber = birthNumber;
+	}
+	
+	
+	public int getNbNursesAvailable() {
+		return nbNursesAvailable;
+	}
 
-// Getters & Setters
-public boolean isFirstBirth() {
-	return firstBirth;
-}
-
-public void setFirstBirth(boolean firstBirth) {
-	this.firstBirth = firstBirth;
-}
-
-public boolean isSecondBirth() {
-	return secondBirth;
-}
-
-public void setSecondBirth(boolean secondBirth) {
-	this.secondBirth = secondBirth;
-}
-
-public boolean isThirdBirth() {
-	return thirdBirth;
-}
-
-public void setThirdBirth(boolean thirdBirth) {
-	this.thirdBirth = thirdBirth;
-}
-
-public int getNbNursesRequiredFirstBirth() {
-	return nbNursesRequiredFirstBirth;
-}
-
-public void setNbNursesRequiredFirstBirth(int nbNursesRequiredFirstBirth) {
-	this.nbNursesRequiredFirstBirth = nbNursesRequiredFirstBirth;
-}
-
-public int getNbNursesRequiredSecondBirth() {
-	return nbNursesRequiredSecondBirth;
-}
-
-public void setNbNursesRequiredSecondBirth(int nbNursesRequiredSecondBirth) {
-	this.nbNursesRequiredSecondBirth = nbNursesRequiredSecondBirth;
-}
-
-public int getNbNursesAlreadyUsed() {
-	return nbNursesAlreadyUsed;
-}
-
-public void setNbNursesAlreadyUsed(int nbNursesAlreadyUsed) {
-	this.nbNursesAlreadyUsed = nbNursesAlreadyUsed;
-}
+	public int getNbNursesAlreadyUsed() {
+		return nbNursesAlreadyUsed;
+	}
+	
+	public void setNbNursesAlreadyUsed(int nbNursesAlreadyUsed) {
+		this.nbNursesAlreadyUsed = nbNursesAlreadyUsed;
+	}
 
 
 }
