@@ -1,7 +1,6 @@
 import antColony.AntColonyBoard;
 import antColony.EventEnum;
 
-
 public class TestEvents {
 
 	/**

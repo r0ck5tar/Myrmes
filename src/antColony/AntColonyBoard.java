@@ -8,13 +8,14 @@ package antColony;
  *  @author Hakim
  */
 public class AntColonyBoard {
-	Ants ants;
-	Resources resources;
-	LarvaBirths larvaBirths;
-	SoldierBirths soldierBirths;
-	WorkerBirths workerBirths;
-	Event event; 
-	int victoryPoints;
+	private Ants ants;
+	private Resources resources;
+	private LarvaBirths larvaBirths;
+	private SoldierBirths soldierBirths;
+	private WorkerBirths workerBirths;
+	private Colony colony;
+	private Event event; 
+	private int victoryPoints;
 	
 	/**
 	 * Instantiates an AntColonyBoard and initializes its Ants and Resources.
@@ -25,8 +26,9 @@ public class AntColonyBoard {
 		larvaBirths = new LarvaBirths(this);
 		soldierBirths = new SoldierBirths(this);
 		workerBirths = new WorkerBirths(this);
+		colony = new Colony(this);
 		event = new Event(this);
-		victoryPoints = 0;
+		victoryPoints = 10;  //Every player starts off with 10 victory points
 	}
 	
 	public Ants getAnts() {
@@ -61,6 +63,22 @@ public class AntColonyBoard {
 		return victoryPoints;
 	}
 	
+	public void addVictoryPoints(int vp) {
+		victoryPoints+=vp;
+	}
+	
+	public void minusVictoryPoints(int vp) {
+		victoryPoints-=vp;
+	}
+	
+	public Colony getColony() {
+		return colony;
+	}
+
+	public void setColony(Colony colony) {
+		this.colony = colony;
+	}
+
 	public String toString() {
 		return "Ants: Nurses- " + ants.getNbNurses() + "\tWorkers- " + ants.getNbWorkers() 
 			+ "\tSoldiers- " +ants.getNbSoldiers()

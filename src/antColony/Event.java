@@ -7,8 +7,8 @@ package antColony;
  * @author Hakim
  */
 public class Event {
-	AntColonyBoard acb;
-	EventEnum activeEvent;
+	private AntColonyBoard acb;
+	private EventEnum activeEvent;
 	
 	public Event(AntColonyBoard acb) {
 		this.acb = acb;
