@@ -1,10 +1,9 @@
 package antColony;
 
 /**
- * A class that represents the resources of the player in his ant's colony.
- * 
+ * A class that represents the resources that a player has. Only one instance of this 
+ * class should be created in each ant colony board.
  * @author Nicolas Marquez
- * 
  */
 
 public class Resources {

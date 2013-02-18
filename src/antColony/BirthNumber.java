@@ -3,8 +3,6 @@ package antColony;
 public enum BirthNumber {
 	FIRST, SECOND, THIRD, NONE;
 	
-	//private int nursesRequired;	
-	
 	public String toString() {
 		switch (this) {
 			case FIRST: return "First birth";

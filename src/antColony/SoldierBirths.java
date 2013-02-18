@@ -1,5 +1,10 @@
 package antColony;
 
+/**
+ * Implements the methods for birthing soldiers. Only one instance of this class should be created
+ * in each AntColonyBoard.
+ * @author Alban
+ */
 public class SoldierBirths extends Births{
 
 	public SoldierBirths(AntColonyBoard ants){

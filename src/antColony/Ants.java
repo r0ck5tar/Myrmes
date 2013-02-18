@@ -1,5 +1,10 @@
 package antColony;
 
+/**
+ * A class that represents the ants that are on the ant colony board of a player. Only one instance
+ * of this class should be created in each ant colony board.
+ * @author Jean-Philippe
+ */
 public class Ants {
 
 	private int nbWorkers;
