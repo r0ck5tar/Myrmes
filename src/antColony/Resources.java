@@ -12,10 +12,10 @@ public class Resources {
 	private int nbLarvae;
 	private int nbFood;
 	private int nbStone;
-	private int nbTerre;
+	private int nbEarth;
 
 	/**
-	 * Build by default an object Resources. It initialize the number of each
+	 * Build by default an object Resources. It initializes the number of each
 	 * attribute at 0.
 	 */
 	public Resources() {
@@ -23,7 +23,7 @@ public class Resources {
 		nbLarvae = 0;
 		nbFood = 0;
 		nbStone = 0;
-		nbTerre = 0;
+		nbEarth = 0;
 	}
 
 	/**
@@ -32,18 +32,18 @@ public class Resources {
 	 * @param nbLarvae
 	 * @param nbFood
 	 * @param nbPierre
-	 * @param nbTerre
+	 * @param nbEarth
 	 */
-	public Resources(int nbLarvae, int nbFood, int nbPierre, int nbTerre) {
+	public Resources(int nbLarvae, int nbFood, int nbPierre, int nbEarth) {
 		this.nbLarvae = nbLarvae;
 		this.nbFood = nbFood;
 		this.nbStone = nbPierre;
-		this.nbTerre = nbTerre;
+		this.nbEarth = nbEarth;
 
 	}
 
 	/**
-	 * Return the number of larves
+	 * Return the number of larvae
 	 * 
 	 * @return nbLarvae
 	 */
@@ -53,7 +53,7 @@ public class Resources {
 	}
 
 	/**
-	 * Set the number of larves
+	 * Set the number of larvae
 	 * 
 	 * @param nbLarvae
 	 */
@@ -100,26 +100,26 @@ public class Resources {
 	}
 
 	/**
-	 * Return the number of terre resources
+	 * Return the number of earth resources
 	 * 
 	 * @return
 	 */
-	public int getNbTerre() {
-		return nbTerre;
+	public int getNbEarth() {
+		return nbEarth;
 	}
 
 	/**
-	 * Set the number of terre resources
+	 * Set the number of earth resources
 	 * 
-	 * @param nbTerre
+	 * @param nbEarth
 	 */
-	public void setNbTerre(int nbTerre) {
-		this.nbTerre = nbTerre;
+	public void setNbEarth(int nbEarth) {
+		this.nbEarth = nbEarth;
 	}
 
 	/**
-	 * Method that converts 3 larves in 1 food resource. If you don't have
-	 * enough larves, return a message error
+	 * Method that converts 3 larvae in 1 food resource. If you don't have
+	 * enough larvae, return a message error
 	 */
 	public void convertLarvae() {
 		if (this.nbLarvae >= 3) {
@@ -132,7 +132,7 @@ public class Resources {
 	}
 
 	/**
-	 * A method to add larves
+	 * A method to add larvae
 	 */
 	public void addLarvae(int n) {
 		nbLarvae += n;
@@ -153,22 +153,18 @@ public class Resources {
 	}
 
 	/**
-	 * A method to add terre resources
+	 * A method to add earth resources
 	 */
-	public void addTerre(int n) {
-		nbTerre += n;
+	public void addEarth(int n) {
+		nbEarth += n;
 	}
 
 	/**
-	 * A method to delete larves
+	 * A method to delete larvae
 	 */
-<<<<<<< HEAD
-	public void removeLarves(int n) {
-		nbLarves -= n;
-=======
 	public void removeLarvae(int n){
 		nbLarvae-=n;
->>>>>>> origin/experimental
+
 	}
 
 	/**
@@ -186,9 +182,9 @@ public class Resources {
 	}
 
 	/**
-	 * A method to delete terre resources
+	 * A method to delete earth resources
 	 */
-	public void removeTerre(int n) {
-		nbTerre -= n;
+	public void removeEarth(int n) {
+		nbEarth -= n;
 	}
 }
