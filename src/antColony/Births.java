@@ -2,17 +2,16 @@ package antColony;
 
 abstract class Births {
 	protected BirthNumber birthNumber;
-	protected int nbNursesAvailable;
-	protected int nbNursesAlreadyUsed;
+	protected int nbNursesUsed;
+	protected AntColonyBoard acb;
 
 	
 	// Constructor
-	public Births(AntColonyBoard ants){
+	public Births(AntColonyBoard acb){
 		this.birthNumber = BirthNumber.FIRST;
-		this.nbNursesAlreadyUsed=0;
-		this.nbNursesAvailable=ants.getAnts().getNbNurses();  //is this variable useful? C'est pas une duplication? 
+		this.nbNursesUsed=0;
+		this.acb = acb;
 	}
-	
 	
 	// Abstract methods
 	public abstract void birth(); 
@@ -29,18 +28,13 @@ abstract class Births {
 	public void setBirthNumber(BirthNumber birthNumber) {
 		this.birthNumber = birthNumber;
 	}
-	
-	
-	public int getNbNursesAvailable() {
-		return nbNursesAvailable;
-	}
 
-	public int getNbNursesAlreadyUsed() {
-		return nbNursesAlreadyUsed;
+	public int getNbNursesUsed() {
+		return nbNursesUsed;
 	}
 	
-	public void setNbNursesAlreadyUsed(int nbNursesAlreadyUsed) {
-		this.nbNursesAlreadyUsed = nbNursesAlreadyUsed;
+	public void setNbNursesAlreadyUsed(int nbNursesUsed) {
+		this.nbNursesUsed = nbNursesUsed;
 	}
 
 

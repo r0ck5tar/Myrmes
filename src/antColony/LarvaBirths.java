@@ -2,8 +2,8 @@ package antColony;
 
 public class LarvaBirths extends Births{
 	
-	public LarvaBirths (AntColonyBoard ants) {
-		super(ants);
+	public LarvaBirths (AntColonyBoard acb) {
+		super(acb);
 	}
 
 	@Override
