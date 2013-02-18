@@ -9,6 +9,10 @@ public class Ants {
 	private final static int MAX_NURSE=8;
 	private int nbAnts= nbWorkers+nbSoldiers;
 	
+	/**
+	 * Builds an Ants object and initializes the number of each type of ant
+	 * according to the rules of the game (2 Workers, 3 Nurses and 0 Soldiers).
+	 */
 	public Ants(){
 		nbWorkers=2;
 		nbNurses=3;

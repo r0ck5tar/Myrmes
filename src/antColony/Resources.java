@@ -15,12 +15,13 @@ public class Resources {
 	private int nbEarth;
 
 	/**
-	 * Build by default an object Resources. It initializes the number of each
-	 * attribute at 0.
+	 * Builds a Resources object and initializes the number of each
+	 * resource according to the rules of the game (1 larva, 0 of each of the 
+	 * other resources)
 	 */
 	public Resources() {
 		// attributes
-		nbLarvae = 0;
+		nbLarvae = 1;
 		nbFood = 0;
 		nbStone = 0;
 		nbEarth = 0;
