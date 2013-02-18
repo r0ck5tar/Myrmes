@@ -18,6 +18,9 @@ abstract class Births {
 	//toutes les classes qui héritent de cette classe implémentera cette méthode différemment
 	//(avec différents nombres de nourrices requises, et différent type de fourmis nés)
 	
+	public abstract void takeNurse(int nbNursesToTake);
+	
+	public abstract void returnNurses();
 	
 	// Getters & Setters
 	

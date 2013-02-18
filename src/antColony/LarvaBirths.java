@@ -21,18 +21,50 @@ public class LarvaBirths extends Births{
 			 * if there are enough nurses present in the larva room, increment the number of larva in resources
 			 * then remove the nurses that are present in the larva room (using the appropriate getters and setters) 
 			 */
+				
+				if(acb.getAnts().getNbNurses() >= 1){
+					takeNurse(1);
+					acb.getResources().addLarvae(1);
+					birthNumber=BirthNumber.SECOND;
+				}
 				break;
 				
 			case SECOND:
-				//similar to the case above, but increase the number of larvae by 2 
+				if(acb.getAnts().getNbNurses() >= 1){
+					takeNurse(1);
+					acb.getResources().addLarvae(2);
+					birthNumber=BirthNumber.THIRD;
+				}
 				break;
 				
 			case THIRD:
-				//same as the case above. (We could just allow the second case to fall through to this case
-				//by removing the break from the case above)
+				//similar as the case above.
+				if(acb.getAnts().getNbNurses() >= 1){
+					takeNurse(1);
+					acb.getResources().addLarvae(2);
+					birthNumber=BirthNumber.NONE;
+				}
+				break;
+				
+			case NONE:
 				break;
 		}		
 	}
-	
+
+	@Override
+	public void takeNurse(int nbNursesToTake) {
+		for(int i=0; i<1; i++){
+			acb.getAnts().removeNurse();
+			nbNursesUsed++;
+		}
+	}
+
+	@Override
+	public void returnNurses() {
+		for(int i=0; i<nbNursesUsed; i++){
+			acb.getAnts().addNurse();
+		}
+		nbNursesUsed=0;
+	}	
 
 }

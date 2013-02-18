@@ -1,7 +1,7 @@
 package antColony;
 
 public enum BirthNumber {
-	FIRST, SECOND, THIRD;
+	FIRST, SECOND, THIRD, NONE;
 	
 	//private int nursesRequired;	
 	
@@ -10,6 +10,7 @@ public enum BirthNumber {
 			case FIRST: return "First birth";
 			case SECOND:return "Second birth";
 			case THIRD: return "Third birth";
+			case NONE: return "No more births allowed";
 			default: return null; 
 		}
 	}

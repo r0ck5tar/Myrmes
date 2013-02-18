@@ -12,4 +12,16 @@ public class SoldierBirths extends Births{
 		// refer to LarvaBirths.java
 		
 	}
+
+	@Override
+	public void takeNurse(int nbNursesToTake) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void returnNurses() {
+		// TODO Auto-generated method stub
+		
+	}
 }
