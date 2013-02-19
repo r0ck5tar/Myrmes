@@ -187,4 +187,40 @@ public class Resources {
 	public void removeEarth(int n) {
 		nbEarth -= n;
 	}
+	
+	class LoadResources{
+		private final static int MAX_RESOURCES_LVL_MAX2=4;
+		private final static int MAX_RESOURCES_LVL_MIN2=6;
+		private final static int REFERENCE_LEVEL = 2;
+		private int nbResource =  nbFood + nbStone + nbEarth;
+		private Colony colony;
+		private int levelColony = colony.getEffectiveLevel();
+		
+		public LoadResources(){
+			if (levelColony <= REFERENCE_LEVEL){
+				if( nbResource > MAX_RESOURCES_LVL_MAX2){
+					System.out.println("Veuillez retirer des ressources.\n" +
+							" Vous avez actuellement" +nbResource + "de ressources");
+				}
+				else{		
+					System.out.println("Vous stockez : "+ nbFood +" nourritures" + nbStone+" pierres" + nbEarth+ " terres");
+				}			
+			}
+			else{
+				if( nbResource > MAX_RESOURCES_LVL_MIN2){
+					System.out.println("Veuillez retirer des ressources.\n" +
+							" Vous avez actuellement" +nbResource + "de ressources");
+				}
+				else{		
+					System.out.println("Vous stockez : "+ nbFood +" nourritures" + nbStone+" pierres" + nbEarth+ " terres");
+				}		
+			}
+		}
+	}
+	
+	class WinterIsComing{
+		
+	}
+
 }
+

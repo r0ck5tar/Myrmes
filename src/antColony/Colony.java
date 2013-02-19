@@ -68,6 +68,9 @@ public class Colony {
 	public int getAntColonyLevel() {
 		return antColonyLevel;
 	}
+	public int getEffectiveLevel(){
+		return effectiveLevel;
+	}
 	
 	/**
 	 * Determines the effective level of the player's ant colony based on whether the LEVEL + 1 event is active.
