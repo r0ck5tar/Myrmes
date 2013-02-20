@@ -216,11 +216,26 @@ public class Resources {
 				}		
 			}
 		}
+		public void discard(int food, int earth, int stone){
+			removeFood(food);
+			removeEarth(earth);
+			removeStone(stone);
+		}
 	}
 	
 	class WinterIsComing{
-		
+		private Ants ants;
+		private int nbSoldiers = ants.getNbSoldiers();
+		private int toSurvive = 4;
+		/*
+		** Call this when the winter is coming
+		*/
+		public WinterIsComing(){
+			int toLive = toSurvive - nbSoldiers;
+			if(toLive>0){
+				removeFood(toLive);							
+			}
+			toSurvive++;
+		}
 	}
-
 }
-
