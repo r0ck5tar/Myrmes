@@ -1,5 +1,8 @@
 package antColony;
 
+import enums.BirthNumber;
+import enums.EventEnum;
+
 /**
  * Implements the methods for birthing larvae. Only one instance of this class should be created
  * in each AntColonyBoard.
@@ -59,21 +62,4 @@ public class LarvaBirths extends Births{
 			System.out.println("\nInsufficient nurses for Larva birth!");
 		}
 	}
-
-	@Override
-	public void takeNurse(int nbNursesToTake) {
-		for(int i=0; i<1; i++){
-			acb.getAnts().removeNurse();
-			nbNursesUsed++;
-		}
-	}
-
-	@Override
-	public void returnNurses() {
-		for(int i=0; i<nbNursesUsed; i++){
-			acb.getAnts().addNurse();
-		}
-		nbNursesUsed=0;
-	}	
-
 }

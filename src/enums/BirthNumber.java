@@ -1,4 +1,4 @@
-package antColony;
+package enums;
 
 public enum BirthNumber {
 	FIRST, SECOND, THIRD, NONE;

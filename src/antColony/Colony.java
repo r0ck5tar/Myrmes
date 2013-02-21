@@ -3,6 +3,8 @@
  */
 package antColony;
 
+import enums.EventEnum;
+
 /**
  * This class represents the ant colony where the worker ants can go to work. It can have up to 4 levels,
  * from level 0 to level 4. 

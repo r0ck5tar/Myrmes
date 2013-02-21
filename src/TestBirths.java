@@ -1,3 +1,5 @@
+import enums.BirthNumber;
+import enums.EventEnum;
 import antColony.*;
 
 public class TestBirths {

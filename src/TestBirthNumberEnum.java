@@ -1,4 +1,4 @@
-import antColony.BirthNumber;
+import enums.BirthNumber;
 
 
 public class TestBirthNumberEnum {

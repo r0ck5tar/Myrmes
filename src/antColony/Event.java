@@ -1,5 +1,7 @@
 package antColony;
 
+import enums.EventEnum;
+
 /**
  * The class Event for now represents the event which affects the individual player. 
  * Later on, this class will be separated into GlobalEvent and PlayerEvent, both

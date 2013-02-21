@@ -1,5 +1,7 @@
 package antColony;
 
+import enums.EventEnum;
+
 /**
  * The AntColonyBoard class represents a player's individual board. It has information
  * about the player's Victory Points (score), the number of ants he has, and his resources.
@@ -14,6 +16,7 @@ public class AntColonyBoard {
 	private LarvaBirths larvaBirths;
 	private SoldierBirths soldierBirths;
 	private WorkerBirths workerBirths;
+	private AtelierRoom atelierRoom;
 	private Colony colony;
 	private Event event; 
 	private int victoryPoints;
@@ -27,6 +30,7 @@ public class AntColonyBoard {
 		larvaBirths = new LarvaBirths(this);
 		soldierBirths = new SoldierBirths(this);
 		workerBirths = new WorkerBirths(this);
+		atelierRoom = new AtelierRoom(this);
 		colony = new Colony(this);
 		stock = resources.new Stock(this);
 		event = new Event(this);
@@ -55,6 +59,10 @@ public class AntColonyBoard {
 
 	public WorkerBirths getWorkerBirths() {
 		return workerBirths;
+	}
+
+	public AtelierRoom getAtelierRoom() {
+		return atelierRoom;
 	}
 
 	public Event getEvent() {

@@ -1,5 +1,5 @@
+import enums.EventEnum;
 import antColony.AntColonyBoard;
-import antColony.EventEnum;
 
 
 public class TestColony {

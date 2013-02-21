@@ -1,4 +1,4 @@
-package antColony;
+package enums;
 
 public enum EventEnum {
 	LEVEL(0), VP(1), LARVA(2), HARVEST(3), MOVE(4), SOLDIER(5), HEXAGON(6), WORKER(7), NONE(-1);
