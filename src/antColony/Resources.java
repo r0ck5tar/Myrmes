@@ -159,7 +159,7 @@ public class Resources {
 		if(n <= nbLarvae){
 			nbLarvae-=n;	
 		}
-		
+
 		else System.out.println("insufficient larvae, cannot remove!");
 	}
 
@@ -199,7 +199,7 @@ public class Resources {
 		private final static int STORAGE_INCREASE_LEVEL = 2; //the ant colony level for which storage capacity is increased
 		private AntColonyBoard acb;
 		private int antColonyLevel;
-		
+
 		private int nbResources() {
 			return nbFood + nbEarth + nbStone; //For Stock purposes, Larvae are not counted as resources.
 		}
@@ -208,7 +208,7 @@ public class Resources {
 			this.acb = acb; 
 			antColonyLevel = acb.getColony().getEffectiveLevel();
 		}
-		
+
 		/**
 		 * Checks if the stockroom is overstocked, by comparing the number of resources to the storage
 		 * capacity, taking into account the ant colony level.
@@ -220,13 +220,13 @@ public class Resources {
 			}
 			else return nbResources() > STORAGE_CAPACITY_LARGE;
 		}
-		
+
 		public void discardStock(int nbFood, int nbEarth, int nbStone) {
 			removeFood(nbFood);
 			removeEarth(nbEarth);
 			removeStone(nbStone);
 		}
-		
+
 		/*
 		 * Precondition: This function should only be called during winter.
 		 * @param year This parameter represents the current year. It's here temporarily, 
@@ -240,17 +240,17 @@ public class Resources {
 			 * -> number of food to be discarded = year + 3 - nbSoldiers.
 			 */
 			int nbFoodToDiscard = year + 3 - acb.getAnts().getNbSoldiers();
-			
+
 			if(nbFoodToDiscard <= nbFood) {
 				removeFood(nbFoodToDiscard);
 			}
-			
+
 			else{ 
 				acb.minusVictoryPoints(3*(nbFoodToDiscard-nbFood)); //minus 3 victory points for each missing food resource
 				removeFood(nbFood); //if there is insufficient food, remove ALL food and reduce victory points
 			}
 		}
-		
+
 		public String toString(){
 			if (isOverstocked()){
 				return "Overstocked! Food = " +nbFood +" Earth = " +nbEarth + " Stone = " + nbStone;
@@ -258,6 +258,11 @@ public class Resources {
 			else return "Food = " +nbFood +" Earth = " +nbEarth + " Stone = " + nbStone;
 		}
 	}
+
+
+	public void discard(int food, int earth, int stone){
+		removeFood(food);
+		removeEarth(earth);
+		removeStone(stone);
+	}
 }
-
-
