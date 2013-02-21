@@ -250,7 +250,6 @@ public class Resources {
 				removeFood(nbFood); //if there is insufficient food, remove ALL food and reduce victory points
 			}
 		}
-<<<<<<< HEAD
 
 		public String toString(){
 			if (isOverstocked()){
@@ -266,28 +265,4 @@ public class Resources {
 		removeEarth(earth);
 		removeStone(stone);
 	}
-=======
-		public void discard(int food, int earth, int stone){
-			removeFood(food);
-			removeEarth(earth);
-			removeStone(stone);
-		}
-	}
-	
-	class WinterIsComing{
-		private Ants ants;
-		private int nbSoldiers = ants.getNbSoldiers();
-		private int toSurvive = 4;
-		/*
-		** Call this when the winter is coming
-		*/
-		public WinterIsComing(){
-			int toLive = toSurvive - nbSoldiers;
-			if(toLive>0){
-				removeFood(toLive);							
-			}
-			toSurvive++;
-		}
-	}
->>>>>>> b5127633e476b58211ca16ec995328e0427f6a3f
 }
