@@ -258,11 +258,4 @@ public class Resources {
 			else return "Food = " +nbFood +" Earth = " +nbEarth + " Stone = " + nbStone;
 		}
 	}
-
-
-	public void discard(int food, int earth, int stone){
-		removeFood(food);
-		removeEarth(earth);
-		removeStone(stone);
-	}
 }
