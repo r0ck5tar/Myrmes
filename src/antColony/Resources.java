@@ -5,7 +5,6 @@ package antColony;
  * class should be created in each ant colony board.
  * @author Nicolas Marquez
  */
-
 public class Resources {
 
 	private int nbLarvae;
@@ -39,7 +38,6 @@ public class Resources {
 		this.nbFood = nbFood;
 		this.nbStone = nbPierre;
 		this.nbEarth = nbEarth;
-
 	}
 
 	/**
@@ -53,18 +51,9 @@ public class Resources {
 	}
 
 	/**
-	 * Set the number of larvae
+	 * Return the number of food resources.
 	 * 
-	 * @param nbLarvae
-	 */
-	public void setNbLarvae(int nbLarvae) {
-		this.nbLarvae = nbLarvae;
-	}
-
-	/**
-	 * Return the number of foods
-	 * 
-	 * @return nbFood
+	 * @return nbFood: the number of food resources.
 	 */
 
 	public int getNbFood() {
@@ -72,62 +61,66 @@ public class Resources {
 	}
 
 	/**
-	 * Set the number of foods
+	 * Return the number of stone resources.
 	 * 
-	 * @param nbFood
-	 */
-
-	public void setNbFood(int nbFood) {
-		this.nbFood = nbFood;
-	}
-
-	/**
-	 * Return the number of stones
-	 * 
-	 * @return
+	 * @return nbStone: the number of stone resources.
 	 */
 	public int getNbStone() {
 		return nbStone;
 	}
 
 	/**
-	 * Set the value of stones
+	 * Return the number of earth resources
 	 * 
-	 * @param nbStone
+	 * @return nbEarth: the number of earth resources.
+	 */
+	public int getNbEarth() {
+		return nbEarth;
+	}
+
+	/** 
+	 * Set the number of larvae resources (on a pheromone/special tile)
+	 * @param nbLarvae the number of larvae resources
+	 */
+	public void setNbLarvae(int nbLarvae) {
+		this.nbLarvae = nbLarvae;
+	}
+
+	/**
+	 * Set the number of food resources (on a pheromone/special tile)
+	 * @param nbFood the number of food resources
+	 */
+	public void setNbFood(int nbFood) {
+		this.nbFood = nbFood;
+	}
+
+	/**
+	 * Set the number of stone resources (on a pheromone/special tile)
+	 * @param nbStone the number of stone resources
 	 */
 	public void setNbStone(int nbStone) {
 		this.nbStone = nbStone;
 	}
 
 	/**
-	 * Return the number of earth resources
-	 * 
-	 * @return
-	 */
-	public int getNbEarth() {
-		return nbEarth;
-	}
-
-	/**
-	 * Set the number of earth resources
-	 * 
-	 * @param nbEarth
+	 * Set the number of earth resources (on a pheromone/special tile)
+	 * @param nbEarth the number of earth resources
 	 */
 	public void setNbEarth(int nbEarth) {
 		this.nbEarth = nbEarth;
 	}
 
 	/**
-	 * Method that converts 3 larvae in 1 food resource. If you don't have
-	 * enough larvae, return a message error
+	 * Method that converts 3 larvae to 1 food resource. If you don't have
+	 * enough larvae, returns an error message.
 	 */
 	public void convertLarvae() {
 		if (this.nbLarvae >= 3) {
 			this.nbLarvae = this.nbLarvae - 3;
 			nbFood++;
-		} else {
-			System.out
-					.println("A minimum of 3 larves is required to convert them in food");
+		} 
+		else {
+			System.out.println("A minimum of 3 larves is required to convert them in food");
 		}
 	}
 
@@ -163,64 +156,108 @@ public class Resources {
 	 * A method to delete larvae
 	 */
 	public void removeLarvae(int n){
-		nbLarvae-=n;
-
+		if(n <= nbLarvae){
+			nbLarvae-=n;	
+		}
+		
+		else System.out.println("insufficient larvae, cannot remove!");
 	}
 
 	/**
 	 * A method to delete food resources
 	 */
 	public void removeFood(int n) {
-		nbFood -= n;
+		if(n <= nbFood){
+			nbFood -= n;	
+		}
+		else System.out.println("insufficient food, cannot remove!");
 	}
 
 	/**
 	 * A method to delete stone resources
 	 */
 	public void removeStone(int n) {
-		nbStone -= n;
+		if(n <= nbStone) {
+			nbStone -= n;
+		}
+		else System.out.println("insufficient stone, cannot remove!");
 	}
 
 	/**
 	 * A method to delete earth resources
 	 */
 	public void removeEarth(int n) {
-		nbEarth -= n;
-	}
-	
-	class LoadResources{
-		private final static int MAX_RESOURCES_LVL_MAX2=4;
-		private final static int MAX_RESOURCES_LVL_MIN2=6;
-		private final static int REFERENCE_LEVEL = 2;
-		private int nbResource =  nbFood + nbStone + nbEarth;
-		private Colony colony;
-		private int levelColony = colony.getEffectiveLevel();
-		
-		public LoadResources(){
-			if (levelColony <= REFERENCE_LEVEL){
-				if( nbResource > MAX_RESOURCES_LVL_MAX2){
-					System.out.println("Veuillez retirer des ressources.\n" +
-							" Vous avez actuellement" +nbResource + "de ressources");
-				}
-				else{		
-					System.out.println("Vous stockez : "+ nbFood +" nourritures" + nbStone+" pierres" + nbEarth+ " terres");
-				}			
-			}
-			else{
-				if( nbResource > MAX_RESOURCES_LVL_MIN2){
-					System.out.println("Veuillez retirer des ressources.\n" +
-							" Vous avez actuellement" +nbResource + "de ressources");
-				}
-				else{		
-					System.out.println("Vous stockez : "+ nbFood +" nourritures" + nbStone+" pierres" + nbEarth+ " terres");
-				}		
-			}
+		if(n <= nbEarth) {
+			nbEarth -= n;
 		}
-	}
-	
-	class WinterIsComing{
-		
+		else System.out.println("insufficient earth, cannot remove!");
 	}
 
+	public class Stock {
+		private final static int STORAGE_CAPACITY_SMALL = 4;
+		private final static int STORAGE_CAPACITY_LARGE = 6;
+		private final static int STORAGE_INCREASE_LEVEL = 2; //the ant colony level for which storage capacity is increased
+		private AntColonyBoard acb;
+		private int antColonyLevel;
+		
+		private int nbResources() {
+			return nbFood + nbEarth + nbStone; //For Stock purposes, Larvae are not counted as resources.
+		}
+
+		public Stock(AntColonyBoard acb) {
+			this.acb = acb; 
+			antColonyLevel = acb.getColony().getEffectiveLevel();
+		}
+		
+		/**
+		 * Checks if the stockroom is overstocked, by comparing the number of resources to the storage
+		 * capacity, taking into account the ant colony level.
+		 * @return true if the Stockroom is overstocked, false otherwise
+		 */
+		public boolean isOverstocked() {
+			if (antColonyLevel < STORAGE_INCREASE_LEVEL) {
+				return nbResources() > STORAGE_CAPACITY_SMALL;
+			}
+			else return nbResources() > STORAGE_CAPACITY_LARGE;
+		}
+		
+		public void discardStock(int nbFood, int nbEarth, int nbStone) {
+			removeFood(nbFood);
+			removeEarth(nbEarth);
+			removeStone(nbStone);
+		}
+		
+		/*
+		 * Precondition: This function should only be called during winter.
+		 * @param year This parameter represents the current year. It's here temporarily, 
+		 * until game turns have been implemented
+		 */
+		public void discardForWinter(int year) {
+			/*
+			 * The number of food resources to be discarded is 4 the first year, 5 the second year and 6 the third year.
+			 * -> number of food to be discarded = year + 3.
+			 * The number of soldiers that a player has reduces the number of food to be discarded.
+			 * -> number of food to be discarded = year + 3 - nbSoldiers.
+			 */
+			int nbFoodToDiscard = year + 3 - acb.getAnts().getNbSoldiers();
+			
+			if(nbFoodToDiscard <= nbFood) {
+				removeFood(nbFoodToDiscard);
+			}
+			
+			else{ 
+				acb.minusVictoryPoints(3*(nbFoodToDiscard-nbFood)); //minus 3 victory points for each missing food resource
+				removeFood(nbFood); //if there is insufficient food, remove ALL food and reduce victory points
+			}
+		}
+		
+		public String toString(){
+			if (isOverstocked()){
+				return "Overstocked! Food = " +nbFood +" Earth = " +nbEarth + " Stone = " + nbStone;
+			}
+			else return "Food = " +nbFood +" Earth = " +nbEarth + " Stone = " + nbStone;
+		}
+	}
 }
+
 

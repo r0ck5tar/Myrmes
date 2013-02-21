@@ -10,6 +10,7 @@ package antColony;
 public class AntColonyBoard {
 	private Ants ants;
 	private Resources resources;
+	private Resources.Stock stock;
 	private LarvaBirths larvaBirths;
 	private SoldierBirths soldierBirths;
 	private WorkerBirths workerBirths;
@@ -27,6 +28,7 @@ public class AntColonyBoard {
 		soldierBirths = new SoldierBirths(this);
 		workerBirths = new WorkerBirths(this);
 		colony = new Colony(this);
+		stock = resources.new Stock(this);
 		event = new Event(this);
 		victoryPoints = 10;  //Every player starts off with 10 victory points
 	}
@@ -37,6 +39,10 @@ public class AntColonyBoard {
 
 	public Resources getResources() {
 		return resources;
+	}
+	
+	public Resources.Stock getStock() {
+		return stock;
 	}
 
 	public LarvaBirths getLarvaBirths() {
@@ -83,7 +89,7 @@ public class AntColonyBoard {
 		return "Ants: Nurses- " + ants.getNbNurses() + "\tWorkers- " + ants.getNbWorkers() 
 			+ "\tSoldiers- " +ants.getNbSoldiers()
 			+ "\nResources: Larvae- "+resources.getNbLarvae() + "\tFood- " + resources.getNbFood()
-			+ "\tStone- " + resources.getNbStone() + "\tEarth- " + resources.getNbEarth() 
+			+ "\tEarth- " + resources.getNbEarth() + "\tStone- " + resources.getNbStone() 
 			+ "\nVictory Points: " + victoryPoints +"\tEvent: " + event;
 		
 	}
