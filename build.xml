@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Myrmes" basedir="." default="dist" >
+		<description>
+			Ant build file for Myrmes project. 
+		</description>
+	
+	<!-- global properties for this build -->
+	<property name="src" location="src/main/java"/>
+	<property name="build" location="bin"/>
+	<property name="dist" location="jar"/>
+	<property name="javadocs" location="docs/javadocs"/>
+	
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp/>
+		<!-- Create the ${build} directory used by compile -->
+		<mkdir dir="${build}"/>
+	</target>
+	
+	<target name="compile" depends="init" description="compile the source code found in ./${src}">
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac srcdir="${src}" destdir="${build}"/>
+	</target>
+	
+	<target name="dist" depends="compile" description="generate the distribution (jar file)">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}"/>
+		
+		<!-- Put everything that's in ${build} into the Myrmes-${DSTAMP}.jar -->
+		<jar jarfile="${dist}/Myrmes-${DSTAMP}.jar" basedir="${build}"/>
+	</target>
+	
+	<target name="docs" description="generate javadoc from source code found in ./${src}">
+		<!-- Create the javadocs directory -->
+		<mkdir dir="${javadocs}"/>
+		
+		<!-- Generate the javadocs from the java code in ${src} -->
+		<javadoc sourcepath="${src}" destdir="${javadocs}"/>
+	</target>
+	
+	<target name="clean" description="clean up build, distribution and javadoc files">
+		<!-- Delete the ${build}, ${dist} and ${javadocs} directory trees" -->
+		<delete dir="${build}"/>
+		<delete dir="${dist}"/>
+		<delete dir="${javadocs}"/>
+	</target>
+</project>
