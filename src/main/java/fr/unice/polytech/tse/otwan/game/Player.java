@@ -1,5 +1,7 @@
 package fr.unice.polytech.tse.otwan.game;
 
+import java.util.List;
+
 import fr.unice.polytech.tse.otwan.antcolonyboard.AntColonyBoard;
 import fr.unice.polytech.tse.otwan.enums.Colours;
 
@@ -7,14 +9,14 @@ public class Player {
 	private Colours playerColour;
 	private AntColonyBoard acb;
 	private VictoryPoints victoryPoints;
-	private int specialTileQuota;
+	
 	//limits for ants
 
 	public Player(Colours colour) {
 		playerColour = colour;
 		victoryPoints = new VictoryPoints(10);
 		acb = new AntColonyBoard(playerColour, victoryPoints);
-		specialTileQuota = 4;
+		
 	}
 
 	public int getVictoryPoints() {
@@ -27,10 +29,6 @@ public class Player {
 	
 	public void minusVictoryPoints(int vp){
 		victoryPoints.minusVictoryPoints(vp);
-	}
-
-	public int getSpecialTileQuota() {
-		return specialTileQuota;
 	}
 	
 	public AntColonyBoard getAntColonyBoard() {

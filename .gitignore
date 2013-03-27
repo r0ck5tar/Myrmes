@@ -1,24 +1,12 @@
-# Object files
-*.o
-
-# Libraries
-*.lib
-*.a
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# Hidden files
-.*
-.gitignore
-
-# Class files
+# Class files and binary directory
 *.class
+target/
+
+# Distribution files
+jar/
+
+#Javadoc files
+docs/javadocs/
+
+#Hidden files
+.*

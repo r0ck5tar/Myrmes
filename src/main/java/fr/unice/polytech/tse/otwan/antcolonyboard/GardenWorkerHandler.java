@@ -6,12 +6,14 @@ import java.util.List;
 import fr.unice.polytech.tse.otwan.ants.Worker;
 import fr.unice.polytech.tse.otwan.enums.Colours;
 import fr.unice.polytech.tse.otwan.hexas.Hexagon;
+import fr.unice.polytech.tse.otwan.tiles.TileHandler;
 
 public class GardenWorkerHandler {
+	private static final int MAX_NB_EXITS = 4;
 	private Worker worker;
 	private List <Hexagon> exits;
-	private static final int MAX_NB_EXITS = 4;
 	private Colours playerColour;
+	private TileHandler tileHandler;
 	
 	public GardenWorkerHandler(Colours playerColour) {
 		exits = new ArrayList<Hexagon>();
