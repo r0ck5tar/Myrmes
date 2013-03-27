@@ -2,9 +2,13 @@ package fr.unice.polytech.tse.otwan.tiles;
 
 import java.util.List;
 
-import javax.swing.LookAndFeel;
-
 import fr.unice.polytech.tse.otwan.enums.Colours;
+import fr.unice.polytech.tse.otwan.tiles.pheromones.BigPheromone;
+import fr.unice.polytech.tse.otwan.tiles.pheromones.Form;
+import fr.unice.polytech.tse.otwan.tiles.pheromones.GiganticPheromone;
+import fr.unice.polytech.tse.otwan.tiles.pheromones.HugePheromone;
+import fr.unice.polytech.tse.otwan.tiles.pheromones.MediumPheromone;
+import fr.unice.polytech.tse.otwan.tiles.pheromones.SmallPheromone;
 
 public class TileHandler {
 	private Colours playerColour;
@@ -27,12 +31,14 @@ public class TileHandler {
 			lvlZeroPheromones.add(new SmallPheromone(playerColour));
 		}
 		
-		for(int i=0; i<MEDIUM_PHEROMONE_LIMIT; i++) {
-			lvlOnePheromones.add(new MediumPheromone(playerColour));
+		for(int i=0; i<MEDIUM_PHEROMONE_LIMIT/2; i++) {
+			lvlOnePheromones.add(new MediumPheromone(playerColour, Form.CLUSTER));
+			lvlOnePheromones.add(new MediumPheromone(playerColour, Form.LINEAR));
 		}
 		
-		for(int i=0; i<BIG_PHEROMONE_LIMIT; i++) {
-			lvlTwoPheromones.add(new BigPheromone(playerColour));
+		for(int i=0; i<BIG_PHEROMONE_LIMIT/2; i++) {
+			lvlTwoPheromones.add(new BigPheromone(playerColour, Form.CLUSTER));
+			lvlTwoPheromones.add(new BigPheromone(playerColour, Form.LINEAR));
 		}
 		
 		for(int i=0; i<HUGE_PHEROMONE_LIMIT; i++) {

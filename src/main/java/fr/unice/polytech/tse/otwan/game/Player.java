@@ -1,7 +1,5 @@
 package fr.unice.polytech.tse.otwan.game;
 
-import java.util.List;
-
 import fr.unice.polytech.tse.otwan.antcolonyboard.AntColonyBoard;
 import fr.unice.polytech.tse.otwan.enums.Colours;
 

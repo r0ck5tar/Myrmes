@@ -18,6 +18,7 @@ public class GardenWorkerHandler {
 	public GardenWorkerHandler(Colours playerColour) {
 		exits = new ArrayList<Hexagon>();
 		this.playerColour = playerColour;
+		tileHandler = new TileHandler(playerColour);
 	}
 	
 	public void initialize(Hexagon primaryExit) {
