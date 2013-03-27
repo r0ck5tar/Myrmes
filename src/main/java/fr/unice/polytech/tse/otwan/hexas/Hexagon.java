@@ -45,12 +45,25 @@ public class Hexagon {
 		this.ringNumber = ringNumber;
 		this.index = index;
 	}
+	
+	/**
+	 * @param hexa the Hexagon which will be tested to see if it's a neighbour.
+	 * @return the index (between 0 and 5) of hexa as this Hexagon's neighbour if it is a neighbour, -1 if it is not
+	 */
+	public int neighbourIndex(Hexagon hexa) {
+		for(int i=0; i<6; i++) {
+			if (hexa != null && hexa == neighbours[i]) {
+				return i;
+			}
+		}
+		
+		return -1;
+	}
 
 	
 	/*
 	 * Algorithms for getting reachable hexagons, with results returned in an ArrayList.
 	 */
-
 
 	/**
 	 * Returns all the hexagons which can be reached within a certain number of steps from the current hexagon.

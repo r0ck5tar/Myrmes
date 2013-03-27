@@ -14,12 +14,9 @@ public class TestMove {
 	
 		//System.out.println(myrmes.playerInfo(1));
 
-		myrmes.gardenWorkerHandler(1).move(myrmes.getHexa(5, 15));
+		//myrmes.gardenWorkerHandler(1).move(myrmes.getHexa(5, 15));
 		
-		//System.out.println(myrmes.playerInfo(1));
-		
-		System.out.println(myrmes.getHexa(0, 0).listValidMovePoints(4));
-			
+		System.out.println(myrmes.getHexa(2, 4).neighbourIndex(myrmes.getHexa(3, 7)));			
 	}
 
 }

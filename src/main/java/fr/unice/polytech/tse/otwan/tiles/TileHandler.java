@@ -1,5 +1,6 @@
 package fr.unice.polytech.tse.otwan.tiles;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.unice.polytech.tse.otwan.enums.Colours;
@@ -26,6 +27,13 @@ public class TileHandler {
 
 	public TileHandler (Colours playerColour) {
 		this.playerColour = playerColour;
+		lvlZeroPheromones = new ArrayList<SmallPheromone>();
+		lvlOnePheromones = new ArrayList<MediumPheromone>();
+		lvlTwoPheromones = new ArrayList<BigPheromone>();
+		lvlThreePheromones = new ArrayList<HugePheromone>();
+		lvlFourPheromones = new ArrayList<GiganticPheromone>();
+		
+		
 		
 		for(int i=0; i<SMALL_PHEROMONE_LIMIT; i++) {
 			lvlZeroPheromones.add(new SmallPheromone(playerColour));
