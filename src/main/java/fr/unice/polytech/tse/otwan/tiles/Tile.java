@@ -42,6 +42,10 @@ public abstract class Tile {
 		return owner;
 	}
 	
+	public int getSize() {
+		return size;
+	}
+	
 	
 	/*
 	 * Setters
