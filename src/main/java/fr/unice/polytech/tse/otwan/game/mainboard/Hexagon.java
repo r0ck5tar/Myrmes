@@ -24,7 +24,7 @@ public class Hexagon {
 	 */
 	private Hexagon[] neighbours = new Hexagon[6];
 	
-	private Tile tile;           // the tile currently covering the hexagon (can be a special tile or pheromone)
+	//private Tile tile;           // the tile currently covering the hexagon (can be a special tile or pheromone)
 	private HexaType type;       // the type of resource that this hexagon provides
 	private Colours exitColour;  // a player's tunnel, from which his workers can exit into the Garden
 	private int ringNumber;

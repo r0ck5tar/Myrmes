@@ -6,7 +6,7 @@ import fr.unice.polytech.tse.otwan.game.enums.Colours;
 import fr.unice.polytech.tse.otwan.game.mainboard.Hexagon;
 
 public class BigPheromone extends Pheromone{
-	Form form;
+	private Form form;
 
 	public BigPheromone(Colours playerColour, Form form) {
 		super(playerColour);

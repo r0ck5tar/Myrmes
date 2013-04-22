@@ -1,5 +1,7 @@
 package fr.unice.polytech.tse.otwan.game.gameengine;
 
-public class GameEngine {
+import fr.unice.polytech.tse.otwan.game.world.World;
 
+public class GameEngine {
+	World world;
 }
